@@ -7,27 +7,28 @@ import { ThunkDispatch } from "redux-thunk";
 
 const UserList: React.FC = () => {
   const dispatch: ThunkDispatch<UsersState, void, any> = useDispatch();
-  const usersState = useSelector((state: UsersState) => state)
+  const users: UsersState["users"] = useSelector((state: UsersState) => state.users);
 
   useEffect(() => {
     dispatch(fetchUsers());
-  }, [dispatch]);
+  }, []);
 
-  const { users, loading, error } = usersState;
+  // const { users, loading, error } = usersState;
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
+  // if (loading) {
+  //   return <div>Loading...</div>;
+  // }
 
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
+  // if (error) {
+  //   return <div>Error: {error}</div>;
+  // }
 
   return (
     <div>
-      {users.map((user: User) => (
+      {JSON.stringify(users)}
+      {/* {usersState.users.map((user: User) => (
         <UserItem key={user.user_id} user={user} />
-      ))}
+      ))} */}
     </div>
   );
 };

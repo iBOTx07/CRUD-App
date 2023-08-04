@@ -17,27 +17,26 @@ const UserForm: React.FC<UserFormProps> = ({ onSubmit }) => {
 
     return (
         <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit}>
-            <Form>
-                <div>
-                    <label htmlFor="first_name">First Name: </label>
-                    <Field type="text" first_name="first_name"/>
-                    <ErrorMessage name="first_name" component="div"/>
-                </div>
-                <div>
-                    <label htmlFor="last_name">Last Name: </label>
-                    <Field type="text" last_name="last_name"/>
-                    <ErrorMessage name="last_name" component="div"/>
-                </div>
-                <div>
-                    <label htmlFor="email">Email: </label>
-                    <Field type="email" email="email"/>
-                    <ErrorMessage name="email" component="div"/>
-                </div>
-                <button type="submit">Submit</button>
-            </Form>
+          <Form>
+            <div>
+              <label htmlFor="first_name">First Name: </label>
+              <Field type="text" name="first_name" />
+              <ErrorMessage name="first_name" component="div" />
+            </div>
+            <div>
+              <label htmlFor="last_name">Last Name: </label>
+              <Field type="text" name="last_name" />
+              <ErrorMessage name="last_name" component="div" />
+            </div>
+            <div>
+              <label htmlFor="email">Email: </label>
+              <Field type="email" name="email" />
+              <ErrorMessage name="email" component="div" />
+            </div>
+            <button type="submit">Submit</button>
+          </Form>
         </Formik>
-        
-    );
+      );
 };
 
 export default UserForm;
